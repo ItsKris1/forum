@@ -1,0 +1,33 @@
+{{ template "base" .}}
+
+{{define "content" }}
+<div class="container">
+    <form action=" /createaccount" method="post">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-4">
+
+                <h2 class="text-center my-5"">Create your username</h2>
+                {{ if .ErrorMsg}}
+                
+                
+                    <div class=" alert alert-danger alert-dismissible" role="alert">
+                    {{ .ErrorMsg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{end}}
+
+            <input type="text" id="username" name="username" class="form-control" placeholder="Your username">
+
+
+
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-dark d-block" type="submit">Create account</button>
+            </div>
+
+
+
+        </div>
+    </form>
+</div>
+
+{{end}}

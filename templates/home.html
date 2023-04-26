@@ -1,0 +1,50 @@
+{{template "base" .}} {{define "content"}}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 col-lg-8">
+
+         {{ if .SuccessfulRegister}}
+            <div class="alert alert-success alert-dismissible" role="alert">
+                Register was succesful!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {{ end }}
+
+            {{ if not .AllPosts}}
+            <div>
+                <a class="btn btn-sm btn-secondary float-end" href="/createpost" role="button">Create a post</a>
+            </div>
+            
+            {{ else }}
+
+
+            <div class="card card-bg shadow w-100">
+                <div class="card-header d-flex justify-content-between">
+                    <span class="align-self-center">Featured</span>
+                    <a class="btn btn-sm btn-secondary" href="/createpost" role="button">New post <i
+                            class="fas fa-plus"></i></a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {{ range $post := .AllPosts }}
+
+                    <li class="list-group-item card-bg">
+                        <p class="card-text">
+                            <a href="/post?id={{$post.ID}}" class="link-light text-decoration-none text-capitalize">
+                                <i class="fas fa-clone"></i> {{$post.Title}}</a>
+                        </p>
+
+                        <small class="text-muted">Tags: {{ range $post.Tags}} {{.}} {{end}}
+                        </small>
+                        <br />
+                        <small class="text-muted">Topic started: {{$post.CreationDate}}</small>
+                    </li>
+                    {{ end}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {{end}}
+</div>
+{{end}}
