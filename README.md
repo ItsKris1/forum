@@ -13,7 +13,7 @@ Navigate to project root directory **/forum-authentication**<br>
 Run ```go run cmd/forum/main.go```<br>
 Go to **http://localhost:8000**
 
-### Stack
+## Stack
 Frontend
 - JQuery Select2
 - Bootstrap 5
@@ -24,5 +24,5 @@ Backend
 - SQLite
 
 
-### Authors
+## Authors
 Kristofer Kangro(Me)
