@@ -39,8 +39,8 @@ func AuthenticateUser(env *env.Env) http.HandlerFunc {
 
 		case "google":
 			authData = OAuth{
-				clientID:     "951994704443-ua3fhj8ctamuc194ejgfpjqc4s941l8v.apps.googleusercontent.com",
-				clientSecret: "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",
+				clientID:     "a",
+				clientSecret: "a",
 				redirectURI:  "http://localhost:8000/oauth/google",
 
 				tokenURL: "https://oauth2.googleapis.com/token",
@@ -50,8 +50,8 @@ func AuthenticateUser(env *env.Env) http.HandlerFunc {
 
 		case "github":
 			authData = OAuth{
-				clientID:     "89a08fe8e784eb5f72be",
-				clientSecret: "b86546ed01d37e1a6a370c78a51ffba3b73e0d75",
+				clientID:     "f",
+				clientSecret: "f",
 				redirectURI:  "http://localhost:8000/oauth/github",
 
 				tokenURL: "https://github.com/login/oauth/access_token",
@@ -198,31 +198,7 @@ func getUserEmail(endpoint, authHeader, provider string) (string, error) {
 		email = v["email"].(string)
 	}
 
-	/* if provider == "google" {
-		var response map[string]interface{}
 
-		err = json.NewDecoder(resp.Body).Decode(&response)
-		if err != nil {
-			fmt.Println("Error occured during decoding access token response")
-			return "", err
-		}
-
-		email = response["email"].(string)
-
-	} else if provider == "github" {
-		var response []map[string]interface{}
-
-		err = json.NewDecoder(resp.Body).Decode(&response)
-		if err != nil {
-			fmt.Println("Error occured during decoding access token response")
-			return "", err
-		}
-
-		email = response[0]["email"].(string)
-	} else {
-		return "", errors.New("invalid provider")
-
-	} */
 
 	return email, nil
 }
