@@ -1,12 +1,13 @@
 ## Project description
 
-Web forum with a session based authentication, which allows you to:
+This project was a part of my schools Go course. I made a web forum with a session based authentication, which allows you to:
 - Register & login
 - Post - including associating them with tags
 - Comment posts
 - Like and dislike posts & comments
 - Filter posts by tags
 
+Since we used Gitea in school, I couldnt keep the commit history.
 ## Run the project
 
 Navigate to project root directory **/forum-authentication**<br>
